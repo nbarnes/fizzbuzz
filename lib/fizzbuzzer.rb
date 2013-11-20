@@ -1,9 +1,3 @@
-# def fizzbuzz(num)
-#   output += "fizz" if num % 3 = 0
-#   output += "buzz" if num % 5 = 0
-#   return output
-# end
-
 class Fizzbuzzer
 
   def initialize
@@ -22,10 +16,15 @@ class Fizzbuzzer
 
   def fizzbuzz(argnum)
     output = ""
+    buzzkill = true
     @buzzers.each do |string, num|
-      output += string if argnum % num == 0
+      if argnum % num == 0
+        output += string
+        buzzkill = false
+      end
     end
-    return output
+    return argnum.to_s if buzzkill
+    output
   end
 
 end
