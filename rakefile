@@ -1,0 +1,5 @@
+task :source_test do
+  require './test/fizzbuzz_test.rb'
+end
+
+task :default => 'source_test'
