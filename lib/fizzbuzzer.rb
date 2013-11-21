@@ -7,8 +7,8 @@ class Fizzbuzzer
   end
 
   # CONSIDER: currently the order that phonemes are checked and outputted
-  # is arbitrarily set based on the order they were added in.  This could
-  # be changed.
+  # is arbitrarily set based on the order they were added.  This could be
+  # changed.
 
   def add_buzzer(string, num)
     @buzzers[string] = num
@@ -16,15 +16,12 @@ class Fizzbuzzer
 
   def fizzbuzz(argnum)
     output = ""
-    buzzkill = true
     @buzzers.each do |string, num|
-      if argnum % num == 0
-        output += string
-        buzzkill = false
-      end
+      output += string if argnum % num == 0
     end
-    return argnum.to_s if buzzkill
-    output
+    output.empty? ? argnum.to_s : output
   end
+
+
 
 end
